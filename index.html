@@ -89,5 +89,53 @@
 
   <script src="data.js"></script>
   <script src="app.js"></script>
+  <script>
+    // 鼠标粒子效果
+    const cover = document.querySelector('.cover-content');
+    let particles = [];
+    
+    cover.addEventListener('mousemove', (e) => {
+      for (let i = 0; i < 3; i++) {
+        createParticle(e.clientX, e.clientY);
+      }
+    });
+    
+    function createParticle(x, y) {
+      const particle = document.createElement('div');
+      particle.className = 'mouse-particle';
+      particle.style.left = x + 'px';
+      particle.style.top = y + 'px';
+      document.body.appendChild(particle);
+      
+      const angle = Math.random() * Math.PI * 2;
+      const speed = Math.random() * 2 + 1;
+      const vx = Math.cos(angle) * speed;
+      const vy = Math.sin(angle) * speed;
+      const opacity = 1;
+      const size = Math.random() * 3 + 2;
+      
+      particle.style.width = size + 'px';
+      particle.style.height = size + 'px';
+      particle.style.opacity = opacity;
+      
+      let life = 0;
+      const maxLife = 30;
+      
+      function animate() {
+        life++;
+        const currentOpacity = 1 - (life / maxLife);
+        particle.style.opacity = currentOpacity;
+        particle.style.transform = `translate(${vx * life}px, ${vy * life}px)`;
+        
+        if (life < maxLife) {
+          requestAnimationFrame(animate);
+        } else {
+          particle.remove();
+        }
+      }
+      
+      requestAnimationFrame(animate);
+    }
+  </script>
 </body>
 </html>
