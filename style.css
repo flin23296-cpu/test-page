@@ -146,7 +146,7 @@ body {
   font-size: 28px;
   font-weight: 700;
   color: var(--text-color);
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   letter-spacing: 3px;
   text-shadow: 0 0 30px rgba(0, 212, 255, 0.6);
   position: relative;
@@ -172,16 +172,16 @@ body {
 }
 
 .book-name {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--secondary-color);
-  letter-spacing: 3px;
-  margin-bottom: 40px;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
   position: relative;
   z-index: 1;
-  padding: 8px 20px;
-  border: 1px solid rgba(255, 107, 157, 0.3);
+  padding: 10px 24px;
+  border: 1px solid rgba(255, 107, 157, 0.4);
   border-radius: 100px;
-  background: rgba(255, 107, 157, 0.05);
+  background: rgba(255, 107, 157, 0.08);
 }
 
 .btn-start {
