@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>性格测试 | 找到打动你的故事</title>
+  <meta name="description" content="7道题，发现你最适合的故事">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    
+    <!-- 封面页 -->
+    <section id="cover" class="page active">
+      <div class="cover-content">
+        <div class="book-cover">
+          <div class="book-icon">📖</div>
+        </div>
+        <h1 class="main-title">性格测试</h1>
+        <p class="subtitle">7道题，找到打动你的故事</p>
+        <p class="description">
+          关于理解与爱，<br>
+          关于那些我们永远无法<br>
+          完全理解的人。
+        </p>
+        <button class="btn-start" onclick="startTest()">开始测试</button>
+        <p class="time-estimate">约需2分钟</p>
+      </div>
+    </section>
+
+    <!-- 测试页 -->
+    <section id="test" class="page">
+      <div class="progress-bar">
+        <div class="progress" id="progress"></div>
+      </div>
+      <div class="question-container">
+        <p class="question-number" id="questionNumber">第 1 题</p>
+        <h2 class="question-text" id="questionText"></h2>
+        <div class="options" id="options"></div>
+      </div>
+    </section>
+
+    <!-- 加载页 -->
+    <section id="loading" class="page">
+      <div class="loading-content">
+        <div class="loading-spinner"></div>
+        <p>正在分析你的答案...</p>
+      </div>
+    </section>
+
+    <!-- 结果页 -->
+    <section id="result" class="page">
+      <div class="result-content">
+        <div class="result-type" id="resultType"></div>
+        
+        <p class="result-slogan">触动你的，是那些<br>我们永远无法完全理解的事</p>
+        
+        <div class="keywords" id="keywords"></div>
+        
+        <div class="result-section">
+          <h3>为什么你是这一型</h3>
+          <p class="result-description" id="resultDescription"></p>
+        </div>
+        
+        <div class="result-section">
+          <h3>故事中的一句话</h3>
+          <blockquote class="result-quote" id="resultQuote"></blockquote>
+        </div>
+        
+        <div class="result-story" id="resultStory"></div>
+        
+        <div class="action-buttons">
+          <a class="btn-buy" id="buyLink" href="#" target="_blank">立即购买</a>
+          <button class="btn-share" onclick="generateShareImage()">生成分享图</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 分享图片预览 -->
+    <section id="sharePreview" class="page">
+      <div class="share-preview-content">
+        <h2>分享图已生成</h2>
+        <div class="share-image-container">
+          <img id="shareImagePreview" alt="分享图预览">
+        </div>
+        <p class="share-tip">长按保存图片，或截图分享</p>
+        <div class="share-actions">
+          <button class="btn-secondary" onclick="downloadShareImage()">下载图片</button>
+          <button class="btn-secondary" onclick="goToResult()">返回结果</button>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
