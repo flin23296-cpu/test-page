@@ -216,35 +216,35 @@ function generateShareImage() {
     y += 30;
     
     // 关键词
-    ctx.font = '20px "PingFang SC", "Microsoft YaHei", sans-serif';
+    ctx.font = 'bold 24px "PingFang SC", "Microsoft YaHei", sans-serif';
     ctx.fillStyle = '#00d4ff';
     const keywordsText = userResult.keywords.join('  |  ');
     ctx.fillText(keywordsText, 50, y);
-    y += 40;
+    y += 45;
     
     // 分隔线
     ctx.beginPath();
     ctx.moveTo(50, y);
     ctx.lineTo(700, y);
     ctx.stroke();
-    y += 30;
+    y += 35;
     
     // 解读标题
     ctx.shadowColor = '#a855f7';
-    ctx.shadowBlur = 10;
-    ctx.font = 'bold 22px "PingFang SC", "Microsoft YaHei", sans-serif';
+    ctx.shadowBlur = 12;
+    ctx.font = 'bold 26px "PingFang SC", "Microsoft YaHei", sans-serif';
     ctx.fillStyle = '#a855f7';
     ctx.fillText('为什么你是这一型', 50, y);
     ctx.shadowBlur = 0;
-    y += 40;
+    y += 45;
     
     // 解读内容
-    ctx.font = '18px "PingFang SC", "Microsoft YaHei", sans-serif';
-    ctx.fillStyle = '#94a3b8';
+    ctx.font = '20px "PingFang SC", "Microsoft YaHei", sans-serif';
+    ctx.fillStyle = '#cbd5e1';
     const descLines = wrapText(ctx, userResult.description, 650);
     descLines.forEach(line => {
       ctx.fillText(line, 50, y);
-      y += 32;
+      y += 36;
     });
     y += 20;
     
@@ -266,13 +266,13 @@ function generateShareImage() {
     ctx.fillStyle = '#ff6b9d';
     ctx.fillText(`《${userResult.story}》`, 50, y);
     ctx.shadowBlur = 0;
-    y += 50;
+    y += 40;
     
     // 标签
-    ctx.font = '18px "PingFang SC", "Microsoft YaHei", sans-serif';
-    ctx.fillStyle = '#64748b';
+    ctx.font = 'bold 22px "PingFang SC", "Microsoft YaHei", sans-serif';
+    ctx.fillStyle = '#94a3b8';
     ctx.fillText('#韩女文学  #金草叶  #科幻小说', 50, y);
-    y += 50;
+    y += 60;
     
     // 底部霓虹装饰
     ctx.shadowColor = '#00d4ff';
