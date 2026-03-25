@@ -91,10 +91,8 @@
   <script src="app.js"></script>
   <script>
     // 鼠标粒子效果
-    const cover = document.querySelector('.cover-content');
-    let particles = [];
-    
-    cover.addEventListener('mousemove', (e) => {
+    document.addEventListener('mousemove', (e) => {
+      if (window.matchMedia('(hover: none)').matches) return;
       for (let i = 0; i < 3; i++) {
         createParticle(e.clientX, e.clientY);
       }
@@ -111,15 +109,14 @@
       const speed = Math.random() * 2 + 1;
       const vx = Math.cos(angle) * speed;
       const vy = Math.sin(angle) * speed;
-      const opacity = 1;
-      const size = Math.random() * 3 + 2;
+      const size = Math.random() * 4 + 2;
       
       particle.style.width = size + 'px';
       particle.style.height = size + 'px';
-      particle.style.opacity = opacity;
+      particle.style.opacity = '1';
       
       let life = 0;
-      const maxLife = 30;
+      const maxLife = 25;
       
       function animate() {
         life++;
