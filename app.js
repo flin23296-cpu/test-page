@@ -271,7 +271,7 @@ function generateShareImage() {
     // 标签
     ctx.font = '18px "PingFang SC", "Microsoft YaHei", sans-serif';
     ctx.fillStyle = '#64748b';
-    ctx.fillText('#韩女文学  #金草叶  #短篇小说', 50, y);
+    ctx.fillText('#韩女文学  #金草叶  #科幻小说', 50, y);
     y += 50;
     
     // 底部霓虹装饰
