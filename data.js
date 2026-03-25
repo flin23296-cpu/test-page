@@ -133,10 +133,13 @@ const RESULTS = {
   }
 };
 
-// 书名（待填入）
+// 书名
 const BOOK_NAME = "无法忍受不曾属于我的沉默";
+
+// 购书链接
+const BUY_LINK = "https://product.dangdang.com/30023084.html";
 
 // 导出
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { QUESTIONS, RESULTS, BOOK_NAME };
+  module.exports = { QUESTIONS, RESULTS, BOOK_NAME, BUY_LINK };
 }

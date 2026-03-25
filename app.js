@@ -141,10 +141,13 @@ function showResult() {
     <p class="result-story-name">《${userResult.story}》</p>
   `;
   
+  // 添加购书链接
+  document.getElementById('buyLink').href = BUY_LINK;
+  
   showPage('result');
 }
 
-// 生成分享图
+// 生成分享图 - 科幻风格
 function generateShareImage() {
   showLoadingForShare();
   
@@ -154,29 +157,42 @@ function generateShareImage() {
     canvas.height = 1200;
     const ctx = canvas.getContext('2d');
     
-    // 渐变背景
+    // 深色渐变背景
     const gradient = ctx.createLinearGradient(0, 0, 750, 1200);
-    gradient.addColorStop(0, '#fafafa');
-    gradient.addColorStop(1, '#e8e8e8');
+    gradient.addColorStop(0, '#0a0a1a');
+    gradient.addColorStop(1, '#1a1a3a');
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, 750, 1200);
     
+    // 霓虹光效
+    const neonGlow = ctx.createRadialGradient(375, 300, 0, 375, 300, 400);
+    neonGlow.addColorStop(0, 'rgba(0, 212, 255, 0.15)');
+    neonGlow.addColorStop(1, 'transparent');
+    ctx.fillStyle = neonGlow;
+    ctx.fillRect(0, 0, 750, 600);
+    
     let y = 60;
     
-    // 顶部装饰线
-    ctx.fillStyle = '#2d3748';
-    ctx.fillRect(50, y, 60, 3);
-    y += 40;
+    // 顶部霓虹装饰线
+    ctx.shadowColor = '#00d4ff';
+    ctx.shadowBlur = 10;
+    ctx.fillStyle = '#00d4ff';
+    ctx.fillRect(50, y, 80, 3);
+    ctx.shadowBlur = 0;
+    y += 50;
     
     // 类型名
-    ctx.fillStyle = '#2d3748';
-    ctx.font = 'bold 40px "PingFang SC", "Microsoft YaHei", sans-serif';
+    ctx.shadowColor = '#00d4ff';
+    ctx.shadowBlur = 20;
+    ctx.fillStyle = '#00d4ff';
+    ctx.font = 'bold 44px "PingFang SC", "Microsoft YaHei", sans-serif';
     ctx.fillText(`「${userResult.name}」`, 50, y);
-    y += 60;
+    ctx.shadowBlur = 0;
+    y += 70;
     
     // 引用语
     ctx.font = 'italic 22px "PingFang SC", "Microsoft YaHei", sans-serif';
-    ctx.fillStyle = '#4a5568';
+    ctx.fillStyle = '#e2e8f0';
     const quote = `"${userResult.quote}"`;
     const quoteLines = wrapText(ctx, quote, 650);
     quoteLines.forEach(line => {
@@ -186,7 +202,7 @@ function generateShareImage() {
     y += 20;
     
     // 分隔线
-    ctx.strokeStyle = '#d4d4d4';
+    ctx.strokeStyle = 'rgba(0, 212, 255, 0.3)';
     ctx.beginPath();
     ctx.moveTo(50, y);
     ctx.lineTo(700, y);
@@ -195,7 +211,7 @@ function generateShareImage() {
     
     // 关键词
     ctx.font = '20px "PingFang SC", "Microsoft YaHei", sans-serif';
-    ctx.fillStyle = '#718096';
+    ctx.fillStyle = '#00d4ff';
     const keywordsText = userResult.keywords.join('  |  ');
     ctx.fillText(keywordsText, 50, y);
     y += 40;
@@ -208,14 +224,17 @@ function generateShareImage() {
     y += 30;
     
     // 解读标题
+    ctx.shadowColor = '#a855f7';
+    ctx.shadowBlur = 10;
     ctx.font = 'bold 22px "PingFang SC", "Microsoft YaHei", sans-serif';
-    ctx.fillStyle = '#2d3748';
+    ctx.fillStyle = '#a855f7';
     ctx.fillText('为什么你是这一型', 50, y);
+    ctx.shadowBlur = 0;
     y += 40;
     
     // 解读内容
     ctx.font = '18px "PingFang SC", "Microsoft YaHei", sans-serif';
-    ctx.fillStyle = '#4a5568';
+    ctx.fillStyle = '#94a3b8';
     const descLines = wrapText(ctx, userResult.description, 650);
     descLines.forEach(line => {
       ctx.fillText(line, 50, y);
@@ -232,28 +251,35 @@ function generateShareImage() {
     
     // 故事名
     ctx.font = '24px "PingFang SC", "Microsoft YaHei", sans-serif';
-    ctx.fillStyle = '#2d3748';
+    ctx.fillStyle = '#e2e8f0';
     ctx.fillText('你可能喜欢的故事是', 50, y);
     y += 45;
-    ctx.font = 'bold 36px "PingFang SC", "Microsoft YaHei", sans-serif';
+    ctx.shadowColor = '#ff6b9d';
+    ctx.shadowBlur = 15;
+    ctx.font = 'bold 40px "PingFang SC", "Microsoft YaHei", sans-serif';
+    ctx.fillStyle = '#ff6b9d';
     ctx.fillText(`《${userResult.story}》`, 50, y);
-    y += 60;
+    ctx.shadowBlur = 0;
+    y += 70;
     
     // 书名
-    ctx.font = '20px "PingFang SC", "Microsoft YaHei", sans-serif';
-    ctx.fillStyle = '#718096';
+    ctx.font = '22px "PingFang SC", "Microsoft YaHei", sans-serif';
+    ctx.fillStyle = '#94a3b8';
     ctx.fillText(BOOK_NAME, 50, y);
     y += 50;
     
     // 标签
     ctx.font = '18px "PingFang SC", "Microsoft YaHei", sans-serif';
-    ctx.fillStyle = '#a0aec0';
+    ctx.fillStyle = '#64748b';
     ctx.fillText('#性格测试  #读书推荐  #韩女文学  #金草叶', 50, y);
     y += 50;
     
-    // 底部装饰
-    ctx.fillStyle = '#2d3748';
-    ctx.fillRect(50, 1100, 60, 3);
+    // 底部霓虹装饰
+    ctx.shadowColor = '#00d4ff';
+    ctx.shadowBlur = 10;
+    ctx.fillStyle = '#00d4ff';
+    ctx.fillRect(50, 1100, 80, 3);
+    ctx.shadowBlur = 0;
     
     // 显示预览
     const img = document.getElementById('shareImagePreview');
