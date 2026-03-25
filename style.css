@@ -121,7 +121,16 @@ body {
   font-size: 15px;
   color: var(--text-light);
   line-height: 2;
-  margin-bottom: 48px;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.book-name {
+  font-size: 14px;
+  color: var(--secondary-color);
+  letter-spacing: 2px;
+  margin-bottom: 32px;
   position: relative;
   z-index: 1;
 }

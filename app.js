@@ -181,6 +181,12 @@ function generateShareImage() {
     ctx.shadowBlur = 0;
     y += 50;
     
+    // 测试名称
+    ctx.font = '18px "PingFang SC", "Microsoft YaHei", sans-serif';
+    ctx.fillStyle = '#ff6b9d';
+    ctx.fillText('《刚刚离开的世界》属于你的故事测试', 50, y);
+    y += 50;
+    
     // 类型名
     ctx.shadowColor = '#00d4ff';
     ctx.shadowBlur = 20;
