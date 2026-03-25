@@ -63,76 +63,76 @@ body {
 }
 
 /* 霓虹光效 */
-.cover-content::before {
-  content: '';
+.cover-glow {
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(0, 212, 255, 0.15) 0%, transparent 70%);
-  animation: pulse 3s ease-in-out infinite;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.2) 0%, rgba(168, 85, 247, 0.1) 40%, transparent 70%);
+  animation: pulse 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.cover-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
-  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
-}
-
-.book-cover {
-  width: 120px;
-  height: 160px;
-  background: linear-gradient(145deg, #1a1a3a 0%, #0a0a1a 100%);
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 32px;
-  box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
-  border: 1px solid rgba(0, 212, 255, 0.3);
-  position: relative;
-  z-index: 1;
-}
-
-.book-icon {
-  font-size: 48px;
+  0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
 }
 
 .main-title {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 700;
   color: var(--text-color);
-  margin-bottom: 12px;
-  letter-spacing: 4px;
-  text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+  margin-bottom: 16px;
+  letter-spacing: 3px;
+  text-shadow: 0 0 30px rgba(0, 212, 255, 0.6);
   position: relative;
   z-index: 1;
 }
 
 .subtitle {
-  font-size: 16px;
+  font-size: 14px;
   color: var(--primary-color);
-  margin-bottom: 32px;
-  letter-spacing: 2px;
+  margin-bottom: 40px;
+  letter-spacing: 3px;
+  position: relative;
+  z-index: 1;
 }
 
 .description {
-  font-size: 15px;
+  font-size: 14px;
   color: var(--text-light);
   line-height: 2;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
   position: relative;
   z-index: 1;
 }
 
 .book-name {
-  font-size: 14px;
+  font-size: 12px;
   color: var(--secondary-color);
-  letter-spacing: 2px;
-  margin-bottom: 32px;
+  letter-spacing: 3px;
+  margin-bottom: 40px;
   position: relative;
   z-index: 1;
+  padding: 8px 20px;
+  border: 1px solid rgba(255, 107, 157, 0.3);
+  border-radius: 100px;
+  background: rgba(255, 107, 157, 0.05);
 }
 
 .btn-start {
