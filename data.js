@@ -134,7 +134,7 @@ const RESULTS = {
 };
 
 // 书名
-const BOOK_NAME = "无法忍受不曾属于我的沉默";
+const BOOK_NAME = "";
 
 // 购书链接
 const BUY_LINK = "https://product.dangdang.com/30023084.html";

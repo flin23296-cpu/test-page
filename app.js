@@ -266,18 +266,12 @@ function generateShareImage() {
     ctx.fillStyle = '#ff6b9d';
     ctx.fillText(`《${userResult.story}》`, 50, y);
     ctx.shadowBlur = 0;
-    y += 70;
-    
-    // 书名
-    ctx.font = '22px "PingFang SC", "Microsoft YaHei", sans-serif';
-    ctx.fillStyle = '#94a3b8';
-    ctx.fillText(BOOK_NAME, 50, y);
     y += 50;
     
     // 标签
     ctx.font = '18px "PingFang SC", "Microsoft YaHei", sans-serif';
     ctx.fillStyle = '#64748b';
-    ctx.fillText('#性格测试  #读书推荐  #韩女文学  #金草叶', 50, y);
+    ctx.fillText('#韩女文学  #金草叶  #短篇小说', 50, y);
     y += 50;
     
     // 底部霓虹装饰
