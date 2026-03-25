@@ -121,6 +121,7 @@ function calculateResult() {
 // 显示结果
 function showResult() {
   document.getElementById('resultType').textContent = `你是「${userResult.name}」`;
+  document.getElementById('resultSlogan').textContent = userResult.slogan;
   document.getElementById('resultDescription').textContent = userResult.description;
   document.getElementById('resultQuote').textContent = userResult.quote;
   
