@@ -218,20 +218,7 @@ function generateShareImage() {
     ctx.fillText(keywordsText, 375, y);
     y += 60;
     
-    // 分隔线
-    ctx.beginPath();
-    ctx.moveTo(100, y);
-    ctx.lineTo(650, y);
-    ctx.stroke();
-    y += 50;
-    
-    // 解读
-    ctx.font = 'bold 32px "PingFang SC", "Microsoft YaHei", sans-serif';
-    ctx.fillStyle = '#00d4ff';
-    ctx.textAlign = 'center';
-    ctx.fillText('为什么你是这一型', 375, y);
-    y += 50;
-    
+    // 解读（无标题，直接从上方分隔线下移）
     ctx.font = '24px "PingFang SC", "Microsoft YaHei", sans-serif';
     ctx.fillStyle = '#cbd5e1';
     const descLines = wrapTextCenter(ctx, userResult.description, 600);
@@ -239,14 +226,14 @@ function generateShareImage() {
       ctx.fillText(line, 375, y);
       y += 40;
     });
-    y += 50;
+    y += 40;
     
     // 分隔线
     ctx.beginPath();
     ctx.moveTo(100, y);
     ctx.lineTo(650, y);
     ctx.stroke();
-    y += 60;
+    y += 50;
     
     // 故事名
     ctx.font = '26px "PingFang SC", "Microsoft YaHei", sans-serif';

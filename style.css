@@ -110,24 +110,24 @@ body {
   bottom: 0;
   background: 
     /* 猎户座星云主体 - 中心亮区（橙红色） */
-    radial-gradient(ellipse 320px 220px at 50% 40%, rgba(255, 120, 60, 0.35) 0%, rgba(200, 80, 40, 0.2) 40%, transparent 70%),
+    radial-gradient(ellipse 400px 280px at 50% 38%, rgba(255, 120, 60, 0.55) 0%, rgba(220, 80, 40, 0.3) 35%, transparent 65%),
     /* 外层红色发射星云 */
-    radial-gradient(ellipse 600px 400px at 50% 45%, rgba(180, 60, 40, 0.25) 0%, transparent 65%),
+    radial-gradient(ellipse 700px 480px at 50% 42%, rgba(180, 60, 40, 0.4) 0%, transparent 60%),
     /* 蓝色反射星云区域 */
-    radial-gradient(ellipse 250px 300px at 30% 55%, rgba(80, 150, 220, 0.2) 0%, transparent 60%),
+    radial-gradient(ellipse 300px 380px at 28% 52%, rgba(80, 150, 220, 0.35) 0%, transparent 55%),
     /* 紫色外围光晕 */
-    radial-gradient(ellipse 450px 350px at 70% 30%, rgba(160, 80, 200, 0.18) 0%, transparent 60%),
-    /* 星云顶部微弱蓝光 */
-    radial-gradient(ellipse 200px 150px at 60% 25%, rgba(100, 180, 255, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 500px 400px at 68% 28%, rgba(160, 80, 200, 0.3) 0%, transparent 55%),
+    /* 星云顶部蓝光 */
+    radial-gradient(ellipse 280px 200px at 62% 22%, rgba(100, 180, 255, 0.25) 0%, transparent 55%),
     /* 底部暗云气 */
-    radial-gradient(ellipse 700px 250px at 50% 85%, rgba(30, 15, 40, 0.4) 0%, transparent 70%);
-  animation: nebulaImgBreath 20s ease-in-out infinite;
+    radial-gradient(ellipse 800px 300px at 50% 88%, rgba(30, 15, 40, 0.5) 0%, transparent 65%);
+  animation: nebulaImgBreath 15s ease-in-out infinite;
   pointer-events: none;
 }
 
 @keyframes nebulaImgBreath {
-  0%, 100% { opacity: 0.75; }
-  50% { opacity: 1; }
+  0%, 100% { opacity: 0.65; }
+  50% { opacity: 0.95; }
 }
 
 .main-title {
@@ -441,7 +441,7 @@ body {
 
 /* 分享预览页 */
 .share-preview-content {
-  padding-top: 40px;
+  padding-top: 20px;
   text-align: center;
 }
 
