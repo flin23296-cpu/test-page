@@ -154,6 +154,12 @@ body {
   position: relative;
   z-index: 1;
   text-shadow: 0 2px 20px rgba(0, 212, 255, 0.2);
+  cursor: pointer;
+  transition: text-shadow 0.3s ease;
+}
+
+.book-title:hover {
+  text-shadow: 0 2px 30px rgba(0, 212, 255, 0.5);
 }
 
 .book-author {
