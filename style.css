@@ -102,35 +102,6 @@ body {
   50% { opacity: 1; transform: scale(1.05) translateY(-5px); }
 }
 
-/* 猎户座星云装饰 - CSS渐变模拟 */
-.cover-nebula-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: 
-    /* 深蓝紫主云层 - 书封色调 */
-    radial-gradient(ellipse 600px 500px at 45% 40%, rgba(40, 80, 160, 0.5) 0%, rgba(30, 50, 120, 0.3) 40%, transparent 70%),
-    /* 右侧紫蓝光区 */
-    radial-gradient(ellipse 450px 600px at 75% 35%, rgba(80, 40, 140, 0.35) 0%, transparent 60%),
-    /* 左下深紫 */
-    radial-gradient(ellipse 500px 400px at 20% 70%, rgba(50, 30, 100, 0.4) 0%, transparent 65%),
-    /* 青色点缀光 */
-    radial-gradient(ellipse 200px 200px at 60% 50%, rgba(0, 180, 255, 0.12) 0%, transparent 60%),
-    /* 顶部浅蓝 */
-    radial-gradient(ellipse 400px 250px at 50% 10%, rgba(80, 120, 200, 0.2) 0%, transparent 60%),
-    /* 底部暗云 */
-    radial-gradient(ellipse 700px 300px at 50% 90%, rgba(15, 10, 30, 0.5) 0%, transparent 70%);
-  animation: nebulaImgBreath 15s ease-in-out infinite;
-  pointer-events: none;
-}
-
-@keyframes nebulaImgBreath {
-  0%, 100% { opacity: 0.65; }
-  50% { opacity: 0.95; }
-}
-
 .cover-book-bg {
   position: absolute;
   top: 0;

@@ -15,7 +15,6 @@
       <div class="cover-content">
         <div class="cover-glow"></div>
         <div class="cover-nebula"></div>
-        <div class="cover-nebula-img"></div>
         <h1 class="book-title">《刚刚离开的世界》</h1>
         <p class="cover-note">韩女作家金草叶的短篇小说集，七个关于无法理解但依然相爱的故事。</p>
         <p class="cover-divider">七个故事，分别属于不同的灵魂</p>
@@ -170,18 +169,21 @@
       const rect = this.getBoundingClientRect();
       const cx = rect.left + rect.width / 2;
       const cy = rect.top + rect.height / 2;
-      for (let i = 0; i < 20; i++) {
-        createSpecialParticle(cx, cy);
+      const colors = ['#00d4ff', '#6b8cff', '#9b6bff', '#ffffff', '#c8d8ff'];
+      for (let i = 0; i < 25; i++) {
+        createSpecialParticle(cx, cy, colors[Math.floor(Math.random() * colors.length)]);
       }
     });
 
-    function createSpecialParticle(x, y) {
+    function createSpecialParticle(x, y, color) {
       const particle = document.createElement('div');
       particle.className = 'touch-particle';
       particle.style.left = x + 'px';
       particle.style.top = y + 'px';
-      particle.style.width = '6px';
-      particle.style.height = '6px';
+      particle.style.width = (Math.random() * 5 + 3) + 'px';
+      particle.style.height = particle.style.width;
+      particle.style.background = color;
+      particle.style.boxShadow = `0 0 6px ${color}, 0 0 12px ${color}`;
       document.body.appendChild(particle);
 
       const angle = Math.random() * Math.PI * 2;
@@ -191,14 +193,11 @@
 
       let life = 0;
       const maxLife = 35;
-      const startX = x;
-      const startY = y;
 
       function animate() {
         life++;
         const progress = life / maxLife;
-        const currentOpacity = 1 - progress;
-        particle.style.opacity = currentOpacity;
+        particle.style.opacity = 1 - progress;
         particle.style.transform = `translate(${vx * life * 1.5}px, ${vy * life * 1.5}px)`;
 
         if (life < maxLife) {
