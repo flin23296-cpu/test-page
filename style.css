@@ -162,15 +162,6 @@ body {
   text-shadow: 0 2px 30px rgba(0, 212, 255, 0.5);
 }
 
-.book-author {
-  font-size: 12px;
-  color: var(--primary-color);
-  letter-spacing: 3px;
-  margin-bottom: 24px;
-  position: relative;
-  z-index: 1;
-}
-
 .cover-note {
   font-size: 14px;
   color: var(--text-secondary);
