@@ -113,17 +113,16 @@ body {
   height: 280px;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.07;
+  opacity: 0.25;
 }
 
 .ferris-wheel {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 200px;
-  height: 200px;
-  border: 1px solid rgba(180, 210, 255, 0.6);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1.5px solid rgba(0, 212, 255, 0.5);
   border-radius: 50%;
   animation: ferrisRotate 60s linear infinite;
 }
@@ -131,11 +130,11 @@ body {
 .ferris-wheel::before {
   content: '';
   position: absolute;
-  top: 50%;
+  top: 0;
   left: 50%;
-  width: 1px;
-  height: 200px;
-  background: rgba(180, 210, 255, 0.3);
+  width: 1.5px;
+  height: 100%;
+  background: rgba(0, 212, 255, 0.3);
   transform-origin: top center;
   transform: translateX(-50%);
 }
@@ -143,37 +142,37 @@ body {
 .ferris-wheel::after {
   content: '';
   position: absolute;
-  top: 50%;
+  top: 0;
   left: 50%;
-  width: 1px;
-  height: 200px;
-  background: rgba(180, 210, 255, 0.3);
+  width: 1.5px;
+  height: 100%;
+  background: rgba(0, 212, 255, 0.3);
   transform: translateX(-50%) rotate(30deg);
   transform-origin: top center;
 }
 
 .ferris-spoke {
   position: absolute;
-  top: 50%;
+  top: 0;
   left: 50%;
-  width: 1px;
-  height: 200px;
-  background: rgba(180, 210, 255, 0.2);
+  width: 1.5px;
+  height: 100%;
+  background: rgba(0, 212, 255, 0.2);
   transform-origin: top center;
 }
 
 .ferris-cabin {
   position: absolute;
-  width: 8px;
-  height: 8px;
-  border: 1px solid rgba(180, 210, 255, 0.5);
+  width: 10px;
+  height: 10px;
+  border: 1px solid rgba(0, 212, 255, 0.6);
   border-radius: 50%;
-  background: rgba(0, 212, 255, 0.15);
+  background: rgba(0, 212, 255, 0.2);
 }
 
 @keyframes ferrisRotate {
-  from { transform: translate(-50%, -50%) rotate(0deg); }
-  to { transform: translate(-50%, -50%) rotate(360deg); }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 .cover-book-bg {
@@ -469,6 +468,14 @@ body {
   color: var(--text-light);
   line-height: 1.9;
   font-style: italic;
+}
+
+.result-intro-label {
+  font-size: 11px;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
 }
 
 .result-story-label {

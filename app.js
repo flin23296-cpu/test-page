@@ -146,12 +146,13 @@ function showResult() {
   document.getElementById('resultSlogan').textContent = userResult.slogan;
   // 描述有两段，用换行分隔
   const descParts = userResult.description.split('\n');
-  document.getElementById('resultDescription').innerHTML = descParts.map(p => `<span>${p}</span>`).join('<br><br>');
+  document.getElementById('resultDescription').innerHTML = descParts.map(p => `<span>${p}</span>`).join('<br>');
   document.getElementById('resultQuote').textContent = userResult.quote;
   
   // 渲染故事简介
   const storyIntroContainer = document.getElementById('resultStoryIntro');
   storyIntroContainer.innerHTML = `
+    <p class="result-intro-label">故事简介</p>
     <p class="result-story-intro-text">${userResult.storyIntro}</p>
   `;
   
