@@ -19,6 +19,7 @@ body {
   color: var(--text-color);
   min-height: 100vh;
   line-height: 1.6;
+  touch-action: none;
 }
 
 .container {
@@ -237,6 +238,7 @@ body {
 /* 结果页 */
 .result-content {
   padding-top: 20px;
+  padding-bottom: 120px;
 }
 
 .result-type {
@@ -453,9 +455,22 @@ body {
     0 0 20px rgba(0, 212, 255, 0.5);
 }
 
-/* 手机端隐藏粒子效果 */
+/* 手机端隐藏鼠标粒子效果，但保留触摸粒子 */
 @media (hover: none) and (pointer: coarse) {
   .mouse-particle {
     display: none;
   }
+}
+
+/* 触摸粒子效果 */
+.touch-particle {
+  position: fixed;
+  background: #00d4ff;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  box-shadow: 
+    0 0 6px #00d4ff,
+    0 0 12px #00d4ff,
+    0 0 20px rgba(0, 212, 255, 0.5);
 }
