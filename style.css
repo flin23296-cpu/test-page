@@ -57,6 +57,7 @@ body {
   padding: 40px 20px;
   position: relative;
   overflow: hidden;
+  z-index: 1;
 }
 
 /* 简洁光效背景 - 采纳书封配色 */
@@ -100,6 +101,79 @@ body {
 @keyframes nebulaDrift {
   0%, 100% { opacity: 0.7; transform: scale(1) translateY(0); }
   50% { opacity: 1; transform: scale(1.05) translateY(-5px); }
+}
+
+/* 摩天轮装饰 */
+.cover-ferris {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 280px;
+  height: 280px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.07;
+}
+
+.ferris-wheel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  border: 1px solid rgba(180, 210, 255, 0.6);
+  border-radius: 50%;
+  animation: ferrisRotate 60s linear infinite;
+}
+
+.ferris-wheel::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1px;
+  height: 200px;
+  background: rgba(180, 210, 255, 0.3);
+  transform-origin: top center;
+  transform: translateX(-50%);
+}
+
+.ferris-wheel::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1px;
+  height: 200px;
+  background: rgba(180, 210, 255, 0.3);
+  transform: translateX(-50%) rotate(30deg);
+  transform-origin: top center;
+}
+
+.ferris-spoke {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1px;
+  height: 200px;
+  background: rgba(180, 210, 255, 0.2);
+  transform-origin: top center;
+}
+
+.ferris-cabin {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border: 1px solid rgba(180, 210, 255, 0.5);
+  border-radius: 50%;
+  background: rgba(0, 212, 255, 0.15);
+}
+
+@keyframes ferrisRotate {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
 .cover-book-bg {
