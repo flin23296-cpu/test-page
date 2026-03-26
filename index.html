@@ -14,6 +14,7 @@
     <section id="cover" class="page active">
       <div class="cover-content">
         <div class="cover-glow"></div>
+        <div class="cover-nebula"></div>
         <div class="book-name">《刚刚离开的世界》</div>
         <h1 class="main-title">属于你的故事测试</h1>
         <p class="subtitle">6道题，找到打动你的故事</p>
@@ -137,7 +138,6 @@
     // 手机触摸事件
     let touchX = 0, touchY = 0, touchInterval = null;
     document.addEventListener('touchstart', (e) => {
-      e.preventDefault();
       touchX = e.touches[0].clientX;
       touchY = e.touches[0].clientY;
       for (let i = 0; i < 3; i++) {
@@ -148,10 +148,9 @@
           addTouchParticle(touchX, touchY);
         }
       }, 80);
-    }, { passive: false });
+    });
 
     document.addEventListener('touchmove', (e) => {
-      e.preventDefault();
       touchX = e.touches[0].clientX;
       touchY = e.touches[0].clientY;
       for (let i = 0; i < 2; i++) {
