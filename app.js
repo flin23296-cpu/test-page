@@ -309,8 +309,44 @@ function showLoadingForShare() {
 }
 
 // 下载分享图
-function downloadShareImage() {
+async function downloadShareImage() {
   const img = document.getElementById('shareImagePreview');
+  
+  // 尝试使用原生分享/保存
+  if (navigator.share && navigator.canShare) {
+    const blob = await (await fetch(img.src)).blob();
+    const file = new File([blob], `性格测试_${userResult.name}.png`, { type: 'image/png' });
+    if (navigator.canShare({ files: [file] })) {
+      try {
+        await navigator.share({
+          files: [file],
+          title: '性格测试结果',
+          text: `我是「${userResult.name}」，${userResult.slogan}`
+        });
+        return;
+      } catch (e) {}
+    }
+  }
+  
+  // Android: 保存到相册
+  if (/Android/i.test(navigator.userAgent)) {
+    try {
+      const blob = await (await fetch(img.src)).blob();
+      const reader = new FileReader();
+      reader.onloadend = async () => {
+        const base64 = reader.result.split(',')[1];
+        // 通过 a 标签下载
+        const link = document.createElement('a');
+        link.download = `性格测试_${userResult.name}.png`;
+        link.href = img.src;
+        link.click();
+      };
+      reader.readAsDataURL(blob);
+      return;
+    } catch (e) {}
+  }
+  
+  // 兜底：普通下载
   const link = document.createElement('a');
   link.download = `性格测试_${userResult.name}.png`;
   link.href = img.src;

@@ -101,25 +101,31 @@ body {
   50% { opacity: 1; transform: scale(1.05) translateY(-5px); }
 }
 
-/* 猎户座星云装饰图 */
+/* 猎户座星云装饰 - CSS渐变模拟 */
 .cover-nebula-img {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Orion_Nebula_-_Hubble_2006_mosaic_18000.jpg/800px-Orion_Nebula_-_Hubble_2006_mosaic_18000.jpg');
-  background-size: cover;
-  background-position: center;
-  opacity: 0.06;
-  pointer-events: none;
-  mix-blend-mode: screen;
+  background: 
+    /* 猎户座星云主体 - 中心亮区 */
+    radial-gradient(ellipse 280px 180px at 50% 45%, rgba(220, 100, 50, 0.18) 0%, transparent 60%),
+    /* 外层红色发射星云 */
+    radial-gradient(ellipse 500px 350px at 50% 45%, rgba(180, 60, 40, 0.12) 0%, transparent 70%),
+    /* 蓝色反射星云区域 */
+    radial-gradient(ellipse 200px 250px at 35% 55%, rgba(60, 120, 200, 0.1) 0%, transparent 60%),
+    /* 紫色外围 */
+    radial-gradient(ellipse 400px 300px at 65% 35%, rgba(120, 60, 160, 0.08) 0%, transparent 65%),
+    /* 底部暗云气 */
+    radial-gradient(ellipse 600px 200px at 50% 80%, rgba(20, 10, 30, 0.3) 0%, transparent 70%);
   animation: nebulaImgBreath 20s ease-in-out infinite;
+  pointer-events: none;
 }
 
 @keyframes nebulaImgBreath {
-  0%, 100% { opacity: 0.05; transform: scale(1); }
-  50% { opacity: 0.08; transform: scale(1.03); }
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
 }
 
 .main-title {
@@ -289,7 +295,7 @@ body {
 /* 结果页 */
 .result-content {
   padding-top: 20px;
-  padding-bottom: 180px;
+  padding-bottom: 220px;
 }
 
 .result-type {
@@ -323,7 +329,7 @@ body {
 }
 
 .result-section {
-  margin-bottom: 32px;
+  margin-bottom: 20px;
 }
 
 .result-section h3 {
