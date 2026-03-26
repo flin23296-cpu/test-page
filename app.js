@@ -83,7 +83,7 @@ function showLoading() {
 
 // 计算结果
 function calculateResult() {
-  // 统计各类型得分
+  // 统计各类型得分（Q1-Q6）
   const scores = {
     time: 0,
     connection: 0,
@@ -94,9 +94,19 @@ function calculateResult() {
     truth: 0
   };
   
+  // Q7的I/E得分（仅用于平分决胜）
+  let ieScore = 0; // 正数=I，负数=E
+  
   // 每答对一题给1分
-  answers.forEach(answer => {
-    scores[answer.type]++;
+  answers.forEach((answer, index) => {
+    const q = QUESTIONS[index];
+    if (q.id <= 6) {
+      scores[answer.type]++;
+    } else {
+      // Q7: I=+1, E=-1
+      if (answer.type === 'I') ieScore++;
+      else ieScore--;
+    }
   });
   
   // 找出最高分
@@ -110,6 +120,18 @@ function calculateResult() {
     }
   });
   
+  // 处理平分：用Q7的I/E来决定
+  const tiedTypes = Object.keys(scores).filter(type => scores[type] === maxScore);
+  if (tiedTypes.length > 1) {
+    if (ieScore > 0) {
+      // I倾向：优先time
+      maxType = tiedTypes.includes('time') ? 'time' : tiedTypes[0];
+    } else {
+      // E倾向：优先connection
+      maxType = tiedTypes.includes('connection') ? 'connection' : tiedTypes[0];
+    }
+  }
+  
   userResult = RESULTS[maxType];
   
   // 模拟加载效果
@@ -122,8 +144,16 @@ function calculateResult() {
 function showResult() {
   document.getElementById('resultType').textContent = `你是「${userResult.name}」`;
   document.getElementById('resultSlogan').textContent = userResult.slogan;
-  document.getElementById('resultDescription').textContent = userResult.description;
+  // 描述有两段，用换行分隔
+  const descParts = userResult.description.split('\n');
+  document.getElementById('resultDescription').innerHTML = descParts.map(p => `<span>${p}</span>`).join('<br><br>');
   document.getElementById('resultQuote').textContent = userResult.quote;
+  
+  // 渲染故事简介
+  const storyIntroContainer = document.getElementById('resultStoryIntro');
+  storyIntroContainer.innerHTML = `
+    <p class="result-story-intro-text">${userResult.storyIntro}</p>
+  `;
   
   // 渲染关键词
   const keywordsContainer = document.getElementById('keywords');

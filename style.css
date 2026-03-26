@@ -369,6 +369,13 @@ body {
   text-align: center;
 }
 
+.result-story-intro-text {
+  font-size: 14px;
+  color: var(--text-light);
+  line-height: 1.9;
+  font-style: italic;
+}
+
 .result-story-label {
   font-size: 12px;
   color: var(--text-light);
