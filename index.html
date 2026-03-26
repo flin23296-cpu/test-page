@@ -135,13 +135,33 @@
     });
     
     // 手机触摸事件
+    let touchX = 0, touchY = 0, touchInterval = null;
+    document.addEventListener('touchstart', (e) => {
+      e.preventDefault();
+      touchX = e.touches[0].clientX;
+      touchY = e.touches[0].clientY;
+      for (let i = 0; i < 3; i++) {
+        addTouchParticle(touchX, touchY);
+      }
+      touchInterval = setInterval(() => {
+        for (let i = 0; i < 2; i++) {
+          addTouchParticle(touchX, touchY);
+        }
+      }, 80);
+    }, { passive: false });
+
     document.addEventListener('touchmove', (e) => {
       e.preventDefault();
-      const touch = e.touches[0];
+      touchX = e.touches[0].clientX;
+      touchY = e.touches[0].clientY;
       for (let i = 0; i < 2; i++) {
-        addTouchParticle(touch.clientX, touch.clientY);
+        addTouchParticle(touchX, touchY);
       }
     }, { passive: false });
+
+    document.addEventListener('touchend', () => {
+      clearInterval(touchInterval);
+    });
 
     // 触摸粒子函数
     function addTouchParticle(x, y) {

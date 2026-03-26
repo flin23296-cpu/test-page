@@ -11,6 +11,7 @@
   --bg-card: #12122a;
   --text-color: #ffffff;
   --text-light: #94a3b8;
+  --text-secondary: #c8d8e8;
 }
 
 body {
@@ -171,7 +172,7 @@ body {
 .question-text {
   font-size: 20px;
   font-weight: 500;
-  color: var(--text-color);
+  color: var(--text-secondary);
   margin-bottom: 32px;
   line-height: 1.6;
 }
@@ -238,7 +239,7 @@ body {
 /* 结果页 */
 .result-content {
   padding-top: 20px;
-  padding-bottom: 120px;
+  padding-bottom: 180px;
 }
 
 .result-type {
@@ -251,7 +252,7 @@ body {
 
 .result-slogan {
   font-size: 18px;
-  color: var(--text-color);
+  color: var(--text-secondary);
   line-height: 1.8;
   margin-bottom: 32px;
 }
