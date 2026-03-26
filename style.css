@@ -20,7 +20,6 @@ body {
   color: var(--text-color);
   min-height: 100vh;
   line-height: 1.6;
-  touch-action: none;
 }
 
 .container {
@@ -100,6 +99,27 @@ body {
 @keyframes nebulaDrift {
   0%, 100% { opacity: 0.7; transform: scale(1) translateY(0); }
   50% { opacity: 1; transform: scale(1.05) translateY(-5px); }
+}
+
+/* 猎户座星云装饰图 */
+.cover-nebula-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Orion_Nebula_-_Hubble_2006_mosaic_18000.jpg/800px-Orion_Nebula_-_Hubble_2006_mosaic_18000.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.06;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  animation: nebulaImgBreath 20s ease-in-out infinite;
+}
+
+@keyframes nebulaImgBreath {
+  0%, 100% { opacity: 0.05; transform: scale(1); }
+  50% { opacity: 0.08; transform: scale(1.03); }
 }
 
 .main-title {
