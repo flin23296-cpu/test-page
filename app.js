@@ -155,27 +155,27 @@ function generateShareImage() {
   setTimeout(() => {
     const canvas = document.createElement('canvas');
     canvas.width = 750;
-    canvas.height = 1334;
+    canvas.height = 1150;
     const ctx = canvas.getContext('2d');
     
     // 纯深色背景
     ctx.fillStyle = '#0a0a1a';
-    ctx.fillRect(0, 0, 750, 1334);
+    ctx.fillRect(0, 0, 750, 1150);
     
-    let y = 80;
+    let y = 60;
     
     // 书名
-    ctx.font = '28px "PingFang SC", "Microsoft YaHei", sans-serif';
+    ctx.font = '26px "PingFang SC", "Microsoft YaHei", sans-serif';
     ctx.fillStyle = '#ffffff';
     ctx.textAlign = 'center';
     ctx.fillText('《刚刚离开的世界》', 375, y);
-    y += 50;
+    y += 40;
     
     // 测试标题
-    ctx.font = '32px "PingFang SC", "Microsoft YaHei", sans-serif';
+    ctx.font = '30px "PingFang SC", "Microsoft YaHei", sans-serif';
     ctx.fillStyle = '#00d4ff';
     ctx.fillText('属于你的故事测试', 375, y);
-    y += 70;
+    y += 55;
     
     // 分隔线
     ctx.strokeStyle = 'rgba(255,255,255,0.1)';
@@ -183,78 +183,78 @@ function generateShareImage() {
     ctx.moveTo(100, y);
     ctx.lineTo(650, y);
     ctx.stroke();
-    y += 60;
+    y += 45;
     
     // 类型名
-    ctx.font = 'bold 56px "PingFang SC", "Microsoft YaHei", sans-serif';
+    ctx.font = 'bold 52px "PingFang SC", "Microsoft YaHei", sans-serif';
     ctx.fillStyle = '#ffffff';
     ctx.textAlign = 'center';
     ctx.fillText(`「${userResult.name}」`, 375, y);
-    y += 80;
+    y += 65;
     
     // 引用语
-    ctx.font = 'italic 26px "PingFang SC", "Microsoft YaHei", sans-serif';
+    ctx.font = 'italic 24px "PingFang SC", "Microsoft YaHei", sans-serif';
     ctx.fillStyle = '#94a3b8';
     const quote = `"${userResult.quote}"`;
     const quoteLines = wrapTextCenter(ctx, quote, 600);
     quoteLines.forEach(line => {
       ctx.fillText(line, 375, y);
-      y += 45;
+      y += 40;
     });
-    y += 40;
+    y += 30;
     
     // 分隔线
     ctx.beginPath();
     ctx.moveTo(100, y);
     ctx.lineTo(650, y);
     ctx.stroke();
-    y += 50;
+    y += 40;
     
     // 关键词
-    ctx.font = '28px "PingFang SC", "Microsoft YaHei", sans-serif';
+    ctx.font = '26px "PingFang SC", "Microsoft YaHei", sans-serif';
     ctx.fillStyle = '#00d4ff';
     ctx.textAlign = 'center';
     const keywordsText = userResult.keywords.join('  |  ');
     ctx.fillText(keywordsText, 375, y);
-    y += 60;
+    y += 45;
     
-    // 解读（无标题，直接从上方分隔线下移）
-    ctx.font = '24px "PingFang SC", "Microsoft YaHei", sans-serif';
+    // 解读
+    ctx.font = '22px "PingFang SC", "Microsoft YaHei", sans-serif';
     ctx.fillStyle = '#cbd5e1';
     const descLines = wrapTextCenter(ctx, userResult.description, 600);
     descLines.forEach(line => {
       ctx.fillText(line, 375, y);
-      y += 40;
+      y += 36;
     });
-    y += 40;
+    y += 30;
     
     // 分隔线
     ctx.beginPath();
     ctx.moveTo(100, y);
     ctx.lineTo(650, y);
     ctx.stroke();
-    y += 50;
+    y += 40;
     
     // 故事名
-    ctx.font = '26px "PingFang SC", "Microsoft YaHei", sans-serif';
+    ctx.font = '24px "PingFang SC", "Microsoft YaHei", sans-serif';
     ctx.fillStyle = '#94a3b8';
     ctx.textAlign = 'center';
     ctx.fillText('你可能喜欢的故事是', 375, y);
-    y += 55;
-    ctx.font = 'bold 48px "PingFang SC", "Microsoft YaHei", sans-serif';
+    y += 45;
+    ctx.font = 'bold 44px "PingFang SC", "Microsoft YaHei", sans-serif';
     ctx.fillStyle = '#00d4ff';
     ctx.fillText(`《${userResult.story}》`, 375, y);
-    y += 80;
+    y += 55;
     
     // 标签
-    ctx.font = '24px "PingFang SC", "Microsoft YaHei", sans-serif';
+    ctx.font = '22px "PingFang SC", "Microsoft YaHei", sans-serif';
     ctx.fillStyle = '#64748b';
     ctx.fillText('#韩女文学  #金草叶  #科幻小说', 375, y);
-    y += 100;
+    y += 60;
     
     // 底部装饰
     ctx.fillStyle = '#00d4ff';
-    ctx.fillRect(320, 1250, 110, 4);
+    ctx.fillRect(320, 1080, 110, 4);
     
     // 显示预览
     const img = document.getElementById('shareImagePreview');
