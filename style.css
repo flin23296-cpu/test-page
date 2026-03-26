@@ -130,20 +130,52 @@ body {
   50% { opacity: 0.95; }
 }
 
-.main-title {
-  font-size: 26px;
-  font-weight: 600;
-  color: var(--text-color);
-  margin-bottom: 12px;
-  letter-spacing: 2px;
+.book-cover-container {
+  margin-bottom: 20px;
   position: relative;
   z-index: 1;
 }
 
-.subtitle {
+.book-cover-img {
+  width: 120px;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.book-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 10px;
+  letter-spacing: 3px;
+  position: relative;
+  z-index: 1;
+}
+
+.book-tagline {
   font-size: 13px;
   color: var(--text-light);
-  margin-bottom: 40px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.cover-note {
+  font-size: 13px;
+  color: var(--text-light);
+  line-height: 1.8;
+  margin-bottom: 28px;
+  position: relative;
+  z-index: 1;
+}
+
+.main-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 16px;
   letter-spacing: 2px;
   position: relative;
   z-index: 1;
@@ -158,18 +190,6 @@ body {
   z-index: 1;
 }
 
-.book-name {
-  font-size: 13px;
-  color: var(--text-light);
-  letter-spacing: 3px;
-  margin-bottom: 20px;
-  position: relative;
-  z-index: 1;
-  padding: 8px 20px;
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 100px;
-}
-
 .btn-start {
   background: var(--primary-color);
   color: #0a0a1a;
@@ -180,7 +200,7 @@ body {
   border-radius: 100px;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   position: relative;
   z-index: 1;
 }
