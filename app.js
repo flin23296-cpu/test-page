@@ -227,7 +227,7 @@ function generateShareImage() {
     
     // 解读
     ctx.font = 'bold 32px "PingFang SC", "Microsoft YaHei", sans-serif';
-    ctx.fillStyle = '#a855f7';
+    ctx.fillStyle = '#00d4ff';
     ctx.textAlign = 'center';
     ctx.fillText('为什么你是这一型', 375, y);
     y += 50;
@@ -255,7 +255,7 @@ function generateShareImage() {
     ctx.fillText('你可能喜欢的故事是', 375, y);
     y += 55;
     ctx.font = 'bold 48px "PingFang SC", "Microsoft YaHei", sans-serif';
-    ctx.fillStyle = '#ff6b9d';
+    ctx.fillStyle = '#00d4ff';
     ctx.fillText(`《${userResult.story}》`, 375, y);
     y += 80;
     

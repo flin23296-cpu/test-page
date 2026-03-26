@@ -1,4 +1,4 @@
-/* 全局样式 - 科幻感：深色背景 + 霓虹点缀 */
+/* 全局样式 - 简洁科幻感 */
 * {
   margin: 0;
   padding: 0;
@@ -7,18 +7,15 @@
 
 :root {
   --primary-color: #00d4ff;
-  --secondary-color: #ff6b9d;
-  --accent-color: #a855f7;
   --bg-dark: #0a0a1a;
   --bg-card: #12122a;
   --text-color: #ffffff;
   --text-light: #94a3b8;
-  --border-color: rgba(0, 212, 255, 0.3);
 }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
-  background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3a 100%);
+  background: var(--bg-dark);
   color: var(--text-color);
   min-height: 100vh;
   line-height: 1.6;
@@ -29,7 +26,6 @@ body {
   margin: 0 auto;
   min-height: 100vh;
   background: var(--bg-dark);
-  box-shadow: 0 0 60px rgba(0, 212, 255, 0.1);
 }
 
 .page {
@@ -62,7 +58,7 @@ body {
   overflow: hidden;
 }
 
-/* 简洁星云背景 */
+/* 简洁光效背景 */
 .cover-glow {
   position: absolute;
   top: 0;
@@ -70,92 +66,25 @@ body {
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(ellipse 500px 400px at 50% 40%, rgba(0, 212, 255, 0.06) 0%, transparent 70%);
+    radial-gradient(ellipse 400px 300px at 50% 40%, rgba(0, 212, 255, 0.08) 0%, transparent 70%);
   pointer-events: none;
-}
-
-/* 星云光效动画 */
-.cover-nebula {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: 
-    radial-gradient(circle 2px at 10% 20%, rgba(255,255,255,0.4) 50%, transparent 50%),
-    radial-gradient(circle 1px at 30% 60%, rgba(255,255,255,0.3) 50%, transparent 50%),
-    radial-gradient(circle 1.5px at 50% 10%, rgba(255,255,255,0.5) 50%, transparent 50%),
-    radial-gradient(circle 1px at 70% 40%, rgba(255,255,255,0.3) 50%, transparent 50%),
-    radial-gradient(circle 2px at 90% 70%, rgba(255,255,255,0.4) 50%, transparent 50%),
-    radial-gradient(circle 1px at 15% 80%, rgba(255,255,255,0.3) 50%, transparent 50%),
-    radial-gradient(circle 1.5px at 85% 15%, rgba(255,255,255,0.4) 50%, transparent 50%),
-    radial-gradient(circle 1px at 45% 90%, rgba(255,255,255,0.3) 50%, transparent 50%),
-    radial-gradient(circle 1px at 25% 45%, rgba(0, 212, 255, 0.6) 50%, transparent 50%),
-    radial-gradient(circle 1px at 75% 55%, rgba(168, 85, 247, 0.6) 50%, transparent 50%);
-  animation: twinkle 6s ease-in-out infinite;
-  pointer-events: none;
-}
-
-@keyframes twinkle {
-  0%, 100% { opacity: 0.6; }
-  50% { opacity: 1; }
-}
-
-/* 移动的星云 */
-.cover-stars {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: 
-    radial-gradient(circle at 20% 30%, rgba(0, 212, 255, 0.15) 0%, transparent 1%),
-    radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.15) 0%, transparent 1%),
-    radial-gradient(circle at 40% 70%, rgba(255, 107, 157, 0.1) 0%, transparent 1%),
-    radial-gradient(circle at 60% 50%, rgba(0, 212, 255, 0.1) 0%, transparent 0.5%);
-  animation: drift 20s linear infinite;
-  pointer-events: none;
-}
-
-@keyframes drift {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-50px); }
-}
-
-.cover-grid {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: 
-    linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
-  background-size: 50px 50px;
-  pointer-events: none;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
-  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
 }
 
 .main-title {
-  font-size: 28px;
-  font-weight: 700;
+  font-size: 26px;
+  font-weight: 600;
   color: var(--text-color);
   margin-bottom: 12px;
-  letter-spacing: 3px;
-  text-shadow: 0 0 30px rgba(0, 212, 255, 0.6);
+  letter-spacing: 2px;
   position: relative;
   z-index: 1;
 }
 
 .subtitle {
-  font-size: 14px;
-  color: var(--primary-color);
+  font-size: 13px;
+  color: var(--text-light);
   margin-bottom: 40px;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   position: relative;
   z-index: 1;
 }
@@ -171,19 +100,18 @@ body {
 
 .book-name {
   font-size: 13px;
-  color: var(--secondary-color);
-  letter-spacing: 4px;
+  color: var(--text-light);
+  letter-spacing: 3px;
   margin-bottom: 20px;
   position: relative;
   z-index: 1;
-  padding: 10px 24px;
-  border: 1px solid rgba(255, 107, 157, 0.4);
+  padding: 8px 20px;
+  border: 1px solid rgba(255,255,255,0.1);
   border-radius: 100px;
-  background: rgba(255, 107, 157, 0.08);
 }
 
 .btn-start {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+  background: var(--primary-color);
   color: #0a0a1a;
   border: none;
   padding: 16px 48px;
@@ -193,7 +121,6 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   margin-bottom: 16px;
-  box-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
   position: relative;
   z-index: 1;
 }
@@ -220,11 +147,10 @@ body {
 
 .progress {
   height: 100%;
-  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  background: var(--primary-color);
   border-radius: 2px;
   transition: width 0.3s ease;
   width: 0%;
-  box-shadow: 0 0 10px var(--primary-color);
 }
 
 .question-container {
@@ -257,7 +183,7 @@ body {
 
 .option {
   background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--border-color);
+  border: 1px solid rgba(255,255,255,0.1);
   padding: 16px 20px;
   border-radius: 12px;
   cursor: pointer;
@@ -270,14 +196,12 @@ body {
 .option:hover {
   border-color: var(--primary-color);
   background: rgba(0, 212, 255, 0.1);
-  box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
 }
 
 .option.selected {
-  background: linear-gradient(135deg, rgba(0, 212, 255, 0.2) 0%, rgba(168, 85, 247, 0.2) 100%);
+  background: rgba(0, 212, 255, 0.15);
   border-color: var(--primary-color);
   color: var(--primary-color);
-  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
 }
 
 /* 加载页 */
@@ -293,12 +217,11 @@ body {
 .loading-spinner {
   width: 50px;
   height: 50px;
-  border: 3px solid rgba(0, 212, 255, 0.2);
+  border: 3px solid rgba(255,255,255,0.1);
   border-top-color: var(--primary-color);
   border-radius: 50%;
   animation: spin 1s linear infinite;
   margin: 0 auto 24px;
-  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
 }
 
 @keyframes spin {
@@ -306,7 +229,7 @@ body {
 }
 
 .loading-content p {
-  color: var(--primary-color);
+  color: var(--text-light);
   font-size: 14px;
   letter-spacing: 1px;
 }
@@ -318,11 +241,10 @@ body {
 
 .result-type {
   font-size: 14px;
-  color: var(--primary-color);
+  color: var(--text-light);
   text-transform: uppercase;
   letter-spacing: 3px;
   margin-bottom: 16px;
-  text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
 }
 
 .result-slogan {
@@ -330,7 +252,6 @@ body {
   color: var(--text-color);
   line-height: 1.8;
   margin-bottom: 32px;
-  font-style: italic;
 }
 
 .keywords {
@@ -342,7 +263,6 @@ body {
 
 .keyword {
   background: rgba(0, 212, 255, 0.1);
-  border: 1px solid rgba(0, 212, 255, 0.3);
   padding: 6px 14px;
   border-radius: 100px;
   font-size: 13px;
@@ -355,7 +275,7 @@ body {
 
 .result-section h3 {
   font-size: 12px;
-  color: var(--accent-color);
+  color: var(--text-light);
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 12px;
@@ -372,20 +292,19 @@ body {
   color: var(--text-color);
   line-height: 1.8;
   padding: 16px 20px;
-  background: rgba(255, 107, 157, 0.05);
+  background: rgba(255,255,255,0.03);
   border-radius: 8px;
-  border-left: 3px solid var(--secondary-color);
+  border-left: 3px solid var(--primary-color);
   font-style: italic;
 }
 
 .result-story {
-  background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
-  border: 1px solid var(--border-color);
+  background: rgba(0, 212, 255, 0.05);
+  border: 1px solid rgba(255,255,255,0.1);
   padding: 24px 20px;
   border-radius: 16px;
   margin-bottom: 32px;
   text-align: center;
-  box-shadow: 0 0 30px rgba(0, 212, 255, 0.1);
 }
 
 .result-story-label {
@@ -398,7 +317,6 @@ body {
   font-size: 20px;
   font-weight: 700;
   color: var(--primary-color);
-  text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
 }
 
 .action-buttons {
@@ -410,21 +328,21 @@ body {
 
 .btn-buy {
   display: block;
-  background: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%);
-  color: white;
+  background: var(--primary-color);
+  color: #0a0a1a;
   text-align: center;
   padding: 16px;
   border-radius: 100px;
   font-size: 16px;
   font-weight: 600;
   text-decoration: none;
-  box-shadow: 0 0 30px rgba(255, 107, 157, 0.4);
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
   transition: all 0.3s ease;
 }
 
 .btn-buy:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 50px rgba(255, 107, 157, 0.6);
+  box-shadow: 0 0 50px rgba(0, 212, 255, 0.6);
 }
 
 .btn-share {
@@ -446,7 +364,7 @@ body {
 .btn-secondary {
   background: transparent;
   color: var(--primary-color);
-  border: 1px solid var(--border-color);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 12px 24px;
   border-radius: 8px;
   font-size: 14px;
@@ -476,7 +394,7 @@ body {
   border-radius: 12px;
   padding: 16px;
   margin-bottom: 16px;
-  border: 1px solid var(--border-color);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .share-image-container img {

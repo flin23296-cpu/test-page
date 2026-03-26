@@ -90,15 +90,8 @@
   <script src="data.js"></script>
   <script src="app.js"></script>
   <script>
-    // 鼠标粒子效果
-    document.addEventListener('mousemove', (e) => {
-      if (window.matchMedia('(hover: none)').matches) return;
-      for (let i = 0; i < 3; i++) {
-        createParticle(e.clientX, e.clientY);
-      }
-    });
-    
-    function createParticle(x, y) {
+    // 粒子效果
+    function addParticle(x, y) {
       const particle = document.createElement('div');
       particle.className = 'mouse-particle';
       particle.style.left = x + 'px';
@@ -133,6 +126,22 @@
       
       requestAnimationFrame(animate);
     }
+    
+    // 鼠标事件
+    document.addEventListener('mousemove', (e) => {
+      for (let i = 0; i < 2; i++) {
+        addParticle(e.clientX, e.clientY);
+      }
+    });
+    
+    // 手机触摸事件
+    document.addEventListener('touchmove', (e) => {
+      e.preventDefault();
+      const touch = e.touches[0];
+      for (let i = 0; i < 2; i++) {
+        addParticle(touch.clientX, touch.clientY);
+      }
+    }, { passive: false });
   </script>
 </body>
 </html>
