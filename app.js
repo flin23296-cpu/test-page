@@ -203,24 +203,24 @@ function generateShareImage() {
     contentHeight += qLen;
     contentHeight += 40;
     contentHeight += 50; // 分隔线2
-    contentHeight += 60; // 关键词
-    const dLen = estimateTextHeight(userResult.description, '24px "PingFang SC", "Microsoft YaHei", sans-serif', 600);
+    contentHeight += 65; // 关键词
+    const dLen = estimateTextHeight(userResult.description, '26px "PingFang SC", "Microsoft YaHei", sans-serif', 600);
     contentHeight += dLen;
-    contentHeight += 40;
+    contentHeight += 45;
     contentHeight += 50; // 分隔线3
     contentHeight += 55; // 你可能喜欢的故事是
     contentHeight += 80; // 故事名
-    const iLen = estimateTextHeight(userResult.storyIntro, 'italic 22px "PingFang SC", "Microsoft YaHei", sans-serif', 600);
+    const iLen = estimateTextHeight(userResult.storyIntro, 'italic 24px "PingFang SC", "Microsoft YaHei", sans-serif', 600);
     contentHeight += iLen;
-    contentHeight += 20;
-    const q2Len = estimateTextHeight(`"${userResult.quote}"`, 'italic 22px "PingFang SC", "Microsoft YaHei", sans-serif', 600);
+    contentHeight += 25;
+    const q2Len = estimateTextHeight(`"${userResult.quote}"`, 'italic 24px "PingFang SC", "Microsoft YaHei", sans-serif', 600);
     contentHeight += q2Len;
-    contentHeight += 30;
-    contentHeight += 15; // 标签
+    contentHeight += 35;
+    contentHeight += 20; // 标签
     contentHeight += 60; // 底部留白
     contentHeight += 20; // 额外底部
     
-    const canvasHeight = Math.max(contentHeight, 900);
+    const canvasHeight = Math.max(contentHeight, 960);
     const canvas = document.createElement('canvas');
     canvas.width = 750;
     canvas.height = canvasHeight;
@@ -279,22 +279,22 @@ function generateShareImage() {
     y += 50;
     
     // 关键词
-    ctx.font = '28px "PingFang SC", "Microsoft YaHei", sans-serif';
+    ctx.font = '32px "PingFang SC", "Microsoft YaHei", sans-serif';
     ctx.fillStyle = '#00d4ff';
     ctx.textAlign = 'center';
     const keywordsText = userResult.keywords.join('  |  ');
     ctx.fillText(keywordsText, 375, y);
-    y += 60;
+    y += 65;
     
     // 解读
-    ctx.font = '24px "PingFang SC", "Microsoft YaHei", sans-serif';
+    ctx.font = '26px "PingFang SC", "Microsoft YaHei", sans-serif';
     ctx.fillStyle = '#cbd5e1';
     const descLines = wrapTextCenter(ctx, userResult.description, 600);
     descLines.forEach(line => {
       ctx.fillText(line, 375, y);
-      y += 40;
+      y += 44;
     });
-    y += 40;
+    y += 45;
     
     // 分隔线
     ctx.beginPath();
@@ -315,27 +315,27 @@ function generateShareImage() {
     y += 55;
     
     // 故事简介
-    ctx.font = 'italic 22px "PingFang SC", "Microsoft YaHei", sans-serif';
+    ctx.font = 'italic 24px "PingFang SC", "Microsoft YaHei", sans-serif';
     ctx.fillStyle = '#94a3b8';
     const introLines = wrapTextCenter(ctx, userResult.storyIntro, 600);
     introLines.forEach(line => {
       ctx.fillText(line, 375, y);
-      y += 38;
+      y += 42;
     });
-    y += 20;
+    y += 25;
     
     // 故事中的一句话
-    ctx.font = 'italic 22px "PingFang SC", "Microsoft YaHei", sans-serif';
+    ctx.font = 'italic 24px "PingFang SC", "Microsoft YaHei", sans-serif';
     ctx.fillStyle = '#64748b';
     const qLines = wrapTextCenter(ctx, `"${userResult.quote}"`, 600);
     qLines.forEach(line => {
       ctx.fillText(line, 375, y);
-      y += 38;
+      y += 42;
     });
-    y += 30;
+    y += 35;
     
     // 标签
-    ctx.font = '22px "PingFang SC", "Microsoft YaHei", sans-serif';
+    ctx.font = '26px "PingFang SC", "Microsoft YaHei", sans-serif';
     ctx.fillStyle = '#64748b';
     ctx.fillText('#韩女文学  #金草叶  #科幻小说', 375, y);
     y += 60;
