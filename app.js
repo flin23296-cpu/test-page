@@ -212,10 +212,7 @@ function generateShareImage() {
     contentHeight += 80; // 故事名
     const iLen = estimateTextHeight(userResult.storyIntro, 'italic 26px "PingFang SC", "Microsoft YaHei", sans-serif', 600);
     contentHeight += iLen;
-    contentHeight += 30;
-    const q2Len = estimateTextHeight(`"${userResult.quote}"`, 'italic 26px "PingFang SC", "Microsoft YaHei", sans-serif', 600);
-    contentHeight += q2Len;
-    contentHeight += 40;
+    contentHeight += 35;
     contentHeight += 20; // 标签
     contentHeight += 60; // 底部留白
     contentHeight += 20; // 额外底部
@@ -322,17 +319,7 @@ function generateShareImage() {
       ctx.fillText(line, 375, y);
       y += 44;
     });
-    y += 30;
-    
-    // 故事中的一句话
-    ctx.font = 'italic 26px "PingFang SC", "Microsoft YaHei", sans-serif';
-    ctx.fillStyle = '#64748b';
-    const qLines = wrapTextCenter(ctx, `"${userResult.quote}"`, 600);
-    qLines.forEach(line => {
-      ctx.fillText(line, 375, y);
-      y += 44;
-    });
-    y += 40;
+    y += 35;
     
     // 标签
     ctx.font = '28px "PingFang SC", "Microsoft YaHei", sans-serif';
