@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>扫码测试</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #050510;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+    .card {
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .qr-wrap {
+      padding: 16px;
+      background: #ffffff;
+      display: inline-block;
+      border-radius: 16px;
+      margin-bottom: 28px;
+    }
+    .qr-wrap img {
+      display: block;
+      width: 260px;
+      height: 260px;
+    }
+    .copy {
+      font-size: 16px;
+      color: #ffffff;
+      line-height: 1.8;
+      max-width: 320px;
+      margin: 0 auto;
+    }
+    .copy .title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #00d4ff;
+      margin-bottom: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="qr-wrap">
+      <img src="https://chart.googleapis.com/chart?cht=qr&chs=260x260&choe=UTF-8&chl=https%3A%2F%2Fflin23296-cpu.github.io%2Ftest-page%2F" alt="QR Code">
+    </div>
+    <div class="copy">
+      <div class="title">韩女作家金草叶《刚刚离开的世界》上市</div>
+      快来测测其中哪个故事属于你
+    </div>
+  </div>
+</body>
+</html>
