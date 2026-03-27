@@ -312,7 +312,7 @@ function generateShareImage() {
     ctx.font = 'bold 48px "PingFang SC", "Microsoft YaHei", sans-serif';
     ctx.fillStyle = '#00d4ff';
     ctx.fillText(`《${userResult.story}》`, 375, y);
-    y += 30;
+    y += 55;
     
     // 故事简介
     ctx.font = 'italic 22px "PingFang SC", "Microsoft YaHei", sans-serif';
