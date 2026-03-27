@@ -275,10 +275,30 @@ function generateShareImage() {
     ctx.font = 'bold 48px "PingFang SC", "Microsoft YaHei", sans-serif';
     ctx.fillStyle = '#00d4ff';
     ctx.fillText(`《${userResult.story}》`, 375, y);
-    y += 80;
+    y += 30;
+    
+    // 故事简介
+    ctx.font = 'italic 22px "PingFang SC", "Microsoft YaHei", sans-serif';
+    ctx.fillStyle = '#94a3b8';
+    const introLines = wrapTextCenter(ctx, userResult.storyIntro, 600);
+    introLines.forEach(line => {
+      ctx.fillText(line, 375, y);
+      y += 38;
+    });
+    y += 20;
+    
+    // 故事中的一句话
+    ctx.font = 'italic 22px "PingFang SC", "Microsoft YaHei", sans-serif';
+    ctx.fillStyle = '#64748b';
+    const qLines = wrapTextCenter(ctx, `"${userResult.quote}"`, 600);
+    qLines.forEach(line => {
+      ctx.fillText(line, 375, y);
+      y += 38;
+    });
+    y += 30;
     
     // 标签
-    ctx.font = '24px "PingFang SC", "Microsoft YaHei", sans-serif';
+    ctx.font = '22px "PingFang SC", "Microsoft YaHei", sans-serif';
     ctx.fillStyle = '#64748b';
     ctx.fillText('#韩女文学  #金草叶  #科幻小说', 375, y);
     y += 15;
