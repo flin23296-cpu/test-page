@@ -184,14 +184,51 @@ function generateShareImage() {
   showLoadingForShare();
   
   setTimeout(() => {
+    // 先计算内容高度，确定画布尺寸
+    const ctxTemp = document.createElement('canvas').getContext('2d');
+    let contentHeight = 80; // 起始y
+    
+    const estimateTextHeight = (text, font, maxWidth) => {
+      ctxTemp.font = font;
+      const lines = wrapTextCenter(ctxTemp, text, maxWidth);
+      return lines.length * 42; // 每行约42px
+    };
+    
+    // 计算各部分高度
+    contentHeight += 50; // 书名
+    contentHeight += 70; // 测试标题
+    contentHeight += 60; // 分隔线1
+    contentHeight += 80; // 类型名
+    const qLen = estimateTextHeight(`"${userResult.quote}"`, 'italic 26px "PingFang SC", "Microsoft YaHei", sans-serif', 600);
+    contentHeight += qLen;
+    contentHeight += 40;
+    contentHeight += 50; // 分隔线2
+    contentHeight += 60; // 关键词
+    const dLen = estimateTextHeight(userResult.description, '24px "PingFang SC", "Microsoft YaHei", sans-serif', 600);
+    contentHeight += dLen;
+    contentHeight += 40;
+    contentHeight += 50; // 分隔线3
+    contentHeight += 55; // 你可能喜欢的故事是
+    contentHeight += 80; // 故事名
+    const iLen = estimateTextHeight(userResult.storyIntro, 'italic 22px "PingFang SC", "Microsoft YaHei", sans-serif', 600);
+    contentHeight += iLen;
+    contentHeight += 20;
+    const q2Len = estimateTextHeight(`"${userResult.quote}"`, 'italic 22px "PingFang SC", "Microsoft YaHei", sans-serif', 600);
+    contentHeight += q2Len;
+    contentHeight += 30;
+    contentHeight += 15; // 标签
+    contentHeight += 60; // 底部留白
+    contentHeight += 20; // 额外底部
+    
+    const canvasHeight = Math.max(contentHeight, 900);
     const canvas = document.createElement('canvas');
     canvas.width = 750;
-    canvas.height = 1150;
+    canvas.height = canvasHeight;
     const ctx = canvas.getContext('2d');
     
     // 纯深色背景
     ctx.fillStyle = '#0a0a1a';
-    ctx.fillRect(0, 0, 750, 1150);
+    ctx.fillRect(0, 0, 750, canvasHeight);
     
     let y = 80;
     
@@ -301,11 +338,11 @@ function generateShareImage() {
     ctx.font = '22px "PingFang SC", "Microsoft YaHei", sans-serif';
     ctx.fillStyle = '#64748b';
     ctx.fillText('#韩女文学  #金草叶  #科幻小说', 375, y);
-    y += 15;
+    y += 60;
     
-    // 底部装饰
+    // 底部装饰（跟着内容走）
     ctx.fillStyle = '#00d4ff';
-    ctx.fillRect(320, 1060, 110, 4);
+    ctx.fillRect(320, y, 110, 4);
     
     // 显示预览
     const img = document.getElementById('shareImagePreview');
