@@ -15,7 +15,7 @@
       <div class="cover-content">
         <div class="cover-glow"></div>
         <div class="cover-nebula"></div>
-        <svg class="cover-ferris" viewBox="-170 -170 340 400" xmlns="http://www.w3.org/2000/svg">
+        <svg class="cover-ferris" viewBox="-170 -190 340 420" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <style>
               .fw-a { animation: fwSpin 30s linear infinite; transform-origin: 0 0; }
@@ -23,33 +23,42 @@
             </style>
           </defs>
           <!-- 底座 -->
-          <line x1="-60" y1="180" x2="0" y2="120" stroke="rgba(255,200,80,0.5)" stroke-width="2"/>
-          <line x1="60" y1="180" x2="0" y2="120" stroke="rgba(255,200,80,0.5)" stroke-width="2"/>
-          <line x1="-40" y1="180" x2="40" y2="180" stroke="rgba(255,200,80,0.4)" stroke-width="2"/>
+          <line x1="-70" y1="190" x2="0" y2="120" stroke="rgba(255,200,80,0.5)" stroke-width="2"/>
+          <line x1="70" y1="190" x2="0" y2="120" stroke="rgba(255,200,80,0.5)" stroke-width="2"/>
+          <line x1="-50" y1="190" x2="50" y2="190" stroke="rgba(255,200,80,0.4)" stroke-width="2"/>
+          <line x1="40" y1="155" x2="70" y2="190" stroke="rgba(255,200,80,0.35)" stroke-width="1.5"/>
           <!-- 旋转轮 -->
           <g class="fw-a">
             <!-- 外圈 -->
             <circle cx="0" cy="0" r="150" fill="none" stroke="rgba(255,200,80,0.7)" stroke-width="2"/>
+            <!-- 内圈 -->
+            <circle cx="0" cy="0" r="40" fill="none" stroke="rgba(255,200,80,0.3)" stroke-width="1"/>
             <!-- 中心轴 -->
-            <circle cx="0" cy="0" r="8" fill="rgba(255,200,80,0.6)" stroke="rgba(255,200,80,0.9)" stroke-width="1.5"/>
-            <!-- 8根辐条 -->
-            <line x1="0" y1="-8" x2="0" y2="-150" stroke="rgba(255,200,80,0.4)" stroke-width="1.5"/>
-            <line x1="0" y1="-8" x2="0" y2="-150" stroke="rgba(255,200,80,0.4)" stroke-width="1.5" transform="rotate(45)"/>
-            <line x1="0" y1="-8" x2="0" y2="-150" stroke="rgba(255,200,80,0.4)" stroke-width="1.5" transform="rotate(90)"/>
-            <line x1="0" y1="-8" x2="0" y2="-150" stroke="rgba(255,200,80,0.4)" stroke-width="1.5" transform="rotate(135)"/>
-            <line x1="0" y1="-8" x2="0" y2="-150" stroke="rgba(255,200,80,0.4)" stroke-width="1.5" transform="rotate(180)"/>
-            <line x1="0" y1="-8" x2="0" y2="-150" stroke="rgba(255,200,80,0.4)" stroke-width="1.5" transform="rotate(225)"/>
-            <line x1="0" y1="-8" x2="0" y2="-150" stroke="rgba(255,200,80,0.4)" stroke-width="1.5" transform="rotate(270)"/>
-            <line x1="0" y1="-8" x2="0" y2="-150" stroke="rgba(255,200,80,0.4)" stroke-width="1.5" transform="rotate(315)"/>
-            <!-- 8个吊舱（顶端右左上右下左下） -->
-            <rect x="-7" y="-164" width="14" height="18" rx="4" fill="rgba(255,200,80,0.25)" stroke="rgba(255,200,80,0.8)" stroke-width="1.5"/>
-            <rect x="-7" y="-164" width="14" height="18" rx="4" fill="rgba(255,200,80,0.25)" stroke="rgba(255,200,80,0.8)" stroke-width="1.5" transform="rotate(45)"/>
-            <rect x="-7" y="-164" width="14" height="18" rx="4" fill="rgba(255,200,80,0.25)" stroke="rgba(255,200,80,0.8)" stroke-width="1.5" transform="rotate(90)"/>
-            <rect x="-7" y="-164" width="14" height="18" rx="4" fill="rgba(255,200,80,0.25)" stroke="rgba(255,200,80,0.8)" stroke-width="1.5" transform="rotate(135)"/>
-            <rect x="-7" y="-164" width="14" height="18" rx="4" fill="rgba(255,200,80,0.25)" stroke="rgba(255,200,80,0.8)" stroke-width="1.5" transform="rotate(180)"/>
-            <rect x="-7" y="-164" width="14" height="18" rx="4" fill="rgba(255,200,80,0.25)" stroke="rgba(255,200,80,0.8)" stroke-width="1.5" transform="rotate(225)"/>
-            <rect x="-7" y="-164" width="14" height="18" rx="4" fill="rgba(255,200,80,0.25)" stroke="rgba(255,200,80,0.8)" stroke-width="1.5" transform="rotate(270)"/>
-            <rect x="-7" y="-164" width="14" height="18" rx="4" fill="rgba(255,200,80,0.25)" stroke="rgba(255,200,80,0.8)" stroke-width="1.5" transform="rotate(315)"/>
+            <circle cx="0" cy="0" r="6" fill="rgba(255,200,80,0.8)" stroke="rgba(255,200,80,1)" stroke-width="1.5"/>
+            <!-- 长辐条（穿过中心）8根 -->
+            <line x1="0" y1="-150" x2="0" y2="150" stroke="rgba(255,200,80,0.4)" stroke-width="1.5"/>
+            <line x1="0" y1="-150" x2="0" y2="150" stroke="rgba(255,200,80,0.4)" stroke-width="1.5" transform="rotate(45)"/>
+            <line x1="0" y1="-150" x2="0" y2="150" stroke="rgba(255,200,80,0.4)" stroke-width="1.5" transform="rotate(90)"/>
+            <line x1="0" y1="-150" x2="0" y2="150" stroke="rgba(255,200,80,0.4)" stroke-width="1.5" transform="rotate(135)"/>
+            <!-- 短辐条（仅内圈到外圈）4根 -->
+            <line x1="0" y1="-40" x2="0" y2="-150" stroke="rgba(255,200,80,0.25)" stroke-width="1" transform="rotate(22.5)"/>
+            <line x1="0" y1="-40" x2="0" y2="-150" stroke="rgba(255,200,80,0.25)" stroke-width="1" transform="rotate(67.5)"/>
+            <line x1="0" y1="-40" x2="0" y2="-150" stroke="rgba(255,200,80,0.25)" stroke-width="1" transform="rotate(112.5)"/>
+            <line x1="0" y1="-40" x2="0" y2="-150" stroke="rgba(255,200,80,0.25)" stroke-width="1" transform="rotate(157.5)"/>
+            <!-- 内圈加强环 -->
+            <line x1="0" y1="-40" x2="0" y2="40" stroke="rgba(255,200,80,0.3)" stroke-width="1" transform="rotate(22.5)"/>
+            <line x1="0" y1="-40" x2="0" y2="40" stroke="rgba(255,200,80,0.3)" stroke-width="1" transform="rotate(67.5)"/>
+            <line x1="0" y1="-40" x2="0" y2="40" stroke="rgba(255,200,80,0.3)" stroke-width="1" transform="rotate(112.5)"/>
+            <line x1="0" y1="-40" x2="0" y2="40" stroke="rgba(255,200,80,0.3)" stroke-width="1" transform="rotate(157.5)"/>
+            <!-- 8个吊舱 -->
+            <rect x="-7" y="-166" width="14" height="18" rx="3" fill="rgba(255,200,80,0.2)" stroke="rgba(255,200,80,0.85)" stroke-width="1.5"/>
+            <rect x="-7" y="-166" width="14" height="18" rx="3" fill="rgba(255,200,80,0.2)" stroke="rgba(255,200,80,0.85)" stroke-width="1.5" transform="rotate(45)"/>
+            <rect x="-7" y="-166" width="14" height="18" rx="3" fill="rgba(255,200,80,0.2)" stroke="rgba(255,200,80,0.85)" stroke-width="1.5" transform="rotate(90)"/>
+            <rect x="-7" y="-166" width="14" height="18" rx="3" fill="rgba(255,200,80,0.2)" stroke="rgba(255,200,80,0.85)" stroke-width="1.5" transform="rotate(135)"/>
+            <rect x="-7" y="-166" width="14" height="18" rx="3" fill="rgba(255,200,80,0.2)" stroke="rgba(255,200,80,0.85)" stroke-width="1.5" transform="rotate(180)"/>
+            <rect x="-7" y="-166" width="14" height="18" rx="3" fill="rgba(255,200,80,0.2)" stroke="rgba(255,200,80,0.85)" stroke-width="1.5" transform="rotate(225)"/>
+            <rect x="-7" y="-166" width="14" height="18" rx="3" fill="rgba(255,200,80,0.2)" stroke="rgba(255,200,80,0.85)" stroke-width="1.5" transform="rotate(270)"/>
+            <rect x="-7" y="-166" width="14" height="18" rx="3" fill="rgba(255,200,80,0.2)" stroke="rgba(255,200,80,0.85)" stroke-width="1.5" transform="rotate(315)"/>
           </g>
         </svg>
         <div class="cover-stars">
