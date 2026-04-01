@@ -15,31 +15,43 @@
       <div class="cover-content">
         <div class="cover-glow"></div>
         <div class="cover-nebula"></div>
-        <div class="cover-ferris">
-          <div class="ferris-wheel">
-            <div class="ferris-spoke"></div>
-            <div class="ferris-spoke"></div>
-            <div class="ferris-spoke"></div>
-            <div class="ferris-spoke"></div>
-            <div class="ferris-spoke"></div>
-            <div class="ferris-spoke"></div>
-            <div class="ferris-spoke"></div>
-            <div class="ferris-spoke"></div>
-            <div class="ferris-cabin"></div>
-            <div class="ferris-cabin"></div>
-            <div class="ferris-cabin"></div>
-            <div class="ferris-cabin"></div>
-            <div class="ferris-cabin"></div>
-            <div class="ferris-cabin"></div>
-            <div class="ferris-cabin"></div>
-            <div class="ferris-cabin"></div>
-          </div>
-          <div class="ferris-base">
-            <div class="ferris-base-left"></div>
-            <div class="ferris-base-right"></div>
-            <div class="ferris-base-cross"></div>
-          </div>
-        </div>
+        <svg class="cover-ferris" viewBox="-170 -170 340 400" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <style>
+              .fw-a { animation: fwSpin 30s linear infinite; transform-origin: 0 0; }
+              @keyframes fwSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+            </style>
+          </defs>
+          <!-- 底座 -->
+          <line x1="-60" y1="180" x2="0" y2="120" stroke="rgba(255,200,80,0.5)" stroke-width="2"/>
+          <line x1="60" y1="180" x2="0" y2="120" stroke="rgba(255,200,80,0.5)" stroke-width="2"/>
+          <line x1="-40" y1="180" x2="40" y2="180" stroke="rgba(255,200,80,0.4)" stroke-width="2"/>
+          <!-- 旋转轮 -->
+          <g class="fw-a">
+            <!-- 外圈 -->
+            <circle cx="0" cy="0" r="150" fill="none" stroke="rgba(255,200,80,0.7)" stroke-width="2"/>
+            <!-- 中心轴 -->
+            <circle cx="0" cy="0" r="8" fill="rgba(255,200,80,0.6)" stroke="rgba(255,200,80,0.9)" stroke-width="1.5"/>
+            <!-- 8根辐条 -->
+            <line x1="0" y1="-8" x2="0" y2="-150" stroke="rgba(255,200,80,0.4)" stroke-width="1.5"/>
+            <line x1="0" y1="-8" x2="0" y2="-150" stroke="rgba(255,200,80,0.4)" stroke-width="1.5" transform="rotate(45)"/>
+            <line x1="0" y1="-8" x2="0" y2="-150" stroke="rgba(255,200,80,0.4)" stroke-width="1.5" transform="rotate(90)"/>
+            <line x1="0" y1="-8" x2="0" y2="-150" stroke="rgba(255,200,80,0.4)" stroke-width="1.5" transform="rotate(135)"/>
+            <line x1="0" y1="-8" x2="0" y2="-150" stroke="rgba(255,200,80,0.4)" stroke-width="1.5" transform="rotate(180)"/>
+            <line x1="0" y1="-8" x2="0" y2="-150" stroke="rgba(255,200,80,0.4)" stroke-width="1.5" transform="rotate(225)"/>
+            <line x1="0" y1="-8" x2="0" y2="-150" stroke="rgba(255,200,80,0.4)" stroke-width="1.5" transform="rotate(270)"/>
+            <line x1="0" y1="-8" x2="0" y2="-150" stroke="rgba(255,200,80,0.4)" stroke-width="1.5" transform="rotate(315)"/>
+            <!-- 8个吊舱（顶端右左上右下左下） -->
+            <rect x="-7" y="-164" width="14" height="18" rx="4" fill="rgba(255,200,80,0.25)" stroke="rgba(255,200,80,0.8)" stroke-width="1.5"/>
+            <rect x="-7" y="-164" width="14" height="18" rx="4" fill="rgba(255,200,80,0.25)" stroke="rgba(255,200,80,0.8)" stroke-width="1.5" transform="rotate(45)"/>
+            <rect x="-7" y="-164" width="14" height="18" rx="4" fill="rgba(255,200,80,0.25)" stroke="rgba(255,200,80,0.8)" stroke-width="1.5" transform="rotate(90)"/>
+            <rect x="-7" y="-164" width="14" height="18" rx="4" fill="rgba(255,200,80,0.25)" stroke="rgba(255,200,80,0.8)" stroke-width="1.5" transform="rotate(135)"/>
+            <rect x="-7" y="-164" width="14" height="18" rx="4" fill="rgba(255,200,80,0.25)" stroke="rgba(255,200,80,0.8)" stroke-width="1.5" transform="rotate(180)"/>
+            <rect x="-7" y="-164" width="14" height="18" rx="4" fill="rgba(255,200,80,0.25)" stroke="rgba(255,200,80,0.8)" stroke-width="1.5" transform="rotate(225)"/>
+            <rect x="-7" y="-164" width="14" height="18" rx="4" fill="rgba(255,200,80,0.25)" stroke="rgba(255,200,80,0.8)" stroke-width="1.5" transform="rotate(270)"/>
+            <rect x="-7" y="-164" width="14" height="18" rx="4" fill="rgba(255,200,80,0.25)" stroke="rgba(255,200,80,0.8)" stroke-width="1.5" transform="rotate(315)"/>
+          </g>
+        </svg>
         <div class="cover-stars">
           <div class="star" style="top:8%;left:12%;width:2px;height:2px;opacity:0.4;animation-delay:0s"></div>
           <div class="star" style="top:15%;left:45%;width:5px;height:5px;opacity:1;animation-delay:1.2s"></div>
