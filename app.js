@@ -175,7 +175,6 @@ function showResult() {
   
   // 添加购书链接
   document.getElementById('buyLink').href = BUY_LINK;
-  document.getElementById('buySearchLink').href = TAOBAO_SEARCH_LINK;
   
   showPage('result');
 }

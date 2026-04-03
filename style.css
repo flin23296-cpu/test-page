@@ -571,18 +571,6 @@ body {
   box-shadow: 0 0 50px rgba(255, 200, 80, 0.6);
 }
 
-.btn-buy-secondary {
-  background: transparent;
-  color: var(--primary-color);
-  border: 1px solid var(--primary-color);
-  box-shadow: none;
-}
-
-.btn-buy-secondary:hover {
-  background: rgba(255, 200, 80, 0.1);
-  box-shadow: 0 0 20px rgba(255, 200, 80, 0.3);
-}
-
 .btn-share {
   background: transparent;
   color: var(--primary-color);

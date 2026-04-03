@@ -161,10 +161,9 @@ const RESULTS = {
 const BOOK_NAME = "";
 
 // 购书链接
-const BUY_LINK = "https://e.tb.cn/h.iPRoUrFvyPcGQkQ?tk=rnVG5dPzhi0";
-const TAOBAO_SEARCH_LINK = "https://s.taobao.com/search?q=%E5%89%8D%E5%88%9A%E7%A6%BB%E5%BC%80%E7%9A%84%E4%B8%96%E7%95%8C+%E9%87%91%E8%8D%89%E5%8F%B6";
+const BUY_LINK = "https://product.dangdang.com/30023084.html";
 
 // 导出
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { QUESTIONS, RESULTS, BOOK_NAME, BUY_LINK, TAOBAO_SEARCH_LINK };
+  module.exports = { QUESTIONS, RESULTS, BOOK_NAME, BUY_LINK };
 }
