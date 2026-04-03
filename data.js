@@ -161,7 +161,7 @@ const RESULTS = {
 const BOOK_NAME = "";
 
 // 购书链接
-const BUY_LINK = "https://product.dangdang.com/30023084.html";
+const BUY_LINK = "https://3.cn/-2JtFjV1";
 
 // 导出
 if (typeof module !== 'undefined' && module.exports) {
